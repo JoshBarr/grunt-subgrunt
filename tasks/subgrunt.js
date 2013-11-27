@@ -54,7 +54,7 @@ module.exports = function (grunt) {
         grunt.util.spawn({
             grunt: true,
             args: args,
-            opts: { cwd: path }
+            opts: { cwd: path, stdio: 'inherit' }
         }, function (err, result, code) {
             if (err || code > 0) {
                 grunt.log.error('Failed running "grunt ' + args.join(' ') + '" in "' + path + '".');
